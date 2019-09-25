@@ -1,0 +1,100 @@
+{
+	"Mercantilistes": {
+		"id": 1,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"Antoine de Montchrestien": {"birth": 1575, "death": 1621, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Barthélemy de Laffemas": {"birth": 1545, "death": 1612, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Jean-Baptiste Colbert": {"birth": 1619, "death": 1683, "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Physiocrates": {
+		"id": 2,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"François Quesnay": {"birth": 1694, "death": 1774, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Anne Robert Jacques Turgot": {"birth": 1727, "death": 1781, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Nicolas Baudeau": {"birth": 1730, "death": 1792, "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Classiques": {
+		"id": 3,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"Thomas Malthus": {"birth": 1766, "death": 1834, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"David Ricardo": {"birth": 1772, "death": 1823, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Jean-Baptiste Say": {"birth": 1767, "death": 1832, "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Marxistes": {
+		"id": 4,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"Karl Marx": {"birth": 1818, "death": 1883, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Bettelheim Charles": {"birth": 1913, "death": 2006, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Diatchenko Vassili Petrovitch": {"birth": 1902, "death": 1971, "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Néoclassiques": {
+		"id": 5,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"William Stanley Jevons": {"birth": 1835, "death": 1882, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Alfred Marshall": {"birth": 1842, "death": 1924, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Bernard Guerrien": {"birth": 1943, "death": "????", "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Keynesiens": {
+		"id": 6,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"John Maynard Keynes": {"birth": 1883, "death": 1946, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Paul Samuelson": {"birth": 1915, "death": 2009, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Joan Robinson": {"birth": 1903, "death": 1983, "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Néoliberaux": {
+		"id": 7,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"François Bilger": {"birth": 1934, "death": 2010, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Daniel Villey": {"birth": 1911, "death": 1968, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Maurice Allais": {"birth": 1911, "death": 2010, "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Néokeynesiens": {
+		"id": 8,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"John Hicks": {"birth": 1904, "death": 1989, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Paul Samuelson": {"birth": 1915, "death": 2009, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Robert Solow": {"birth": 1924, "death": "????", "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	},
+	"Autres": {
+		"id": 9,
+		"default": -1,
+		"EPS": -1,
+		"unlock": "False",
+		"users": {
+			"Louis Amable Petit": {"birth": 1819, "death": 1871, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Steven Levitt": {"birth": 1967, "death": "????", "num": 0, "sum": "", "default": -1, "EPS": -1}
+		}
+	}
+}
