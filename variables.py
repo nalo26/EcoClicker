@@ -5,7 +5,7 @@ def init():
 	global billet # pictures
 	global mouseX, mouseY, keyCode
 	global Economia, EPS, shop
-	global m_mouvement, _default, m_eps, m_unlock, m_users, u_birth, u_death, u_num, u_sum, u_default, u_eps # data from json
+	global m_mouvement, _default, m_eps, m_unlock, m_users, u_birth, u_death, u_num, u_sum, u_default, u_eps, m_images # data from json
 
 	MainGameMaster = True
 	toshow = 'LoadData'
@@ -29,7 +29,7 @@ def init():
 
 	Economia = 0
 	EPS = 0 # eco par seconde
-	shop = 1
+	shop = 2
 	shopPers = 0
 
 	m_mouvement = []
@@ -43,3 +43,5 @@ def init():
 	u_sum = []
 	u_default = []
 	u_eps = []
+
+	m_images = []

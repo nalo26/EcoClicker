@@ -29,7 +29,10 @@
 		"users": {
 			"Thomas Malthus": {"birth": 1766, "death": 1834, "num": 0, "sum": "", "default": -1, "EPS": -1},
 			"David Ricardo": {"birth": 1772, "death": 1823, "num": 0, "sum": "", "default": -1, "EPS": -1},
-			"Jean-Baptiste Say": {"birth": 1767, "death": 1832, "num": 0, "sum": "", "default": -1, "EPS": -1}
+			"Jean-Baptiste Say": {"birth": 1767, "death": 1832, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Adam Smith": {"birth": 1723, "death": 1790, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"John Stuart Mill": {"birth": 1806, "death": 1873, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Piero Sraffa": {"birth": 1898, "death": 1983, "num": 0, "sum": "", "default": -1, "EPS": -1}
 		}
 	},
 	"Marxistes": {
@@ -40,7 +43,7 @@
 		"users": {
 			"Karl Marx": {"birth": 1818, "death": 1883, "num": 0, "sum": "", "default": -1, "EPS": -1},
 			"Bettelheim Charles": {"birth": 1913, "death": 2006, "num": 0, "sum": "", "default": -1, "EPS": -1},
-			"Diatchenko Vassili Petrovitch": {"birth": 1902, "death": 1971, "num": 0, "sum": "", "default": -1, "EPS": -1}
+			"Louis Althusser": {"birth": 1918, "death": 1990, "num": 0, "sum": "", "default": -1, "EPS": -1}
 		}
 	},
 	"Néoclassiques": {
@@ -93,8 +96,9 @@
 		"EPS": -1,
 		"unlock": "False",
 		"users": {
-			"Louis Amable Petit": {"birth": 1819, "death": 1871, "num": 0, "sum": "", "default": -1, "EPS": -1},
-			"Steven Levitt": {"birth": 1967, "death": "????", "num": 0, "sum": "", "default": -1, "EPS": -1}
+			"Steven Levitt": {"birth": 1967, "death": "????", "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"Joseph Schumpeter": {"birth": 1883, "death": 1950, "num": 0, "sum": "", "default": -1, "EPS": -1},
+			"John Kenneth Galbraith": {"birth": 1908, "death": 2006, "num": 0, "sum": "", "default": -1, "EPS": -1}
 		}
 	}
 }

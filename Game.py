@@ -16,6 +16,7 @@ def Game():
 	image(v.bgshop, 592, 0)
 	fill(255, 255, 255)
 	textAlign("LEFT")
+	textSize(24)
 	for i in range(len(v.m_mouvement)):
 		image(v.onglet, 388, 80*i)
 		if v.m_unlock[i] == "True": fill(0, 255, 0)
@@ -25,10 +26,15 @@ def Game():
 
 	for i in range(len(v.m_users)):
 		image(v.bg_users, 592, 120*i)
+		image(v.m_images[i], 595, 120*i+2, 96, 116)
 		textAlign("LEFT")
-		text(v.m_users[i], 600, 120*(i+1)-48)
+		text(v.m_users[i], 695, 120*i+25)
+		textSize(15)
+		text(f"{v.u_birth[i]} - {v.u_death[i]}", 695, 120*i+44)
+		text(v.u_sum[i], 695, 120*i+90)
 		textAlign("RIGHT")
-		text(v.u_num[i], 1280, 120*(i+1)-48)
+		textSize(24)
+		text(v.u_num[i], 1280-5, 120*i+25)
 
 def ChangementMenu():
 	v.toshow = 'Game'
@@ -53,6 +59,7 @@ def ChangementMenu():
 		if json_data[m]['id'] == v.shop:
 			for user in json_data[m]['users']: 
 				v.m_users.append(user)
+				v.m_images.append(pygame.image.load(f"data/portraits/{user}.jpg"))
 				v.u_birth.append(json_data[m]['users'][user]['birth'])
 				v.u_death.append(json_data[m]['users'][user]['death'])
 				v.u_num.append(json_data[m]['users'][user]['num'])
