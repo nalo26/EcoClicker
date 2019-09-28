@@ -56,10 +56,13 @@ def mousePressed(pos):
 		if v.mouseX > 590: # Différents Personnages
 			if v.mouseY > 80*0 and v.mouseY < 80*1: 
 				# v.shop = 1
+				pass
 			if v.mouseY > 80*1 and v.mouseY < 80*2: 
 				# v.shop = 2
+				pass
 			if v.mouseY > 80*2 and v.mouseY < 80*3: 
 				# v.shop = 3
+				pass
 			# if v.mouseY > 80*3 and v.mouseY < 80*4: 
 			# 	v.shop = 4
 			# if v.mouseY > 80*4 and v.mouseY < 80*5: 

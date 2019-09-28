@@ -4,8 +4,6 @@ import variables as v
 v.init()
 from ProcToPy import *
 
-mouvement_list = []
-# v.econo_list = ['e']
 
 def Game():
 	background(0)
@@ -18,29 +16,50 @@ def Game():
 	image(v.bgshop, 592, 0)
 	fill(255, 255, 255)
 	textAlign("LEFT")
-	for i in range(len(mouvement_list)):
+	for i in range(len(v.m_mouvement)):
 		image(v.onglet, 388, 80*i)
-		text(mouvement_list[i], 400, 80*(i+1)-32)
+		if v.m_unlock[i] == "True": fill(0, 255, 0)
+		else: fill(255, 0, 0)
+		text(v.m_mouvement[i], 400, 80*(i+1)-32)
+	fill(255)
 
-	for i in range(len(v.econo_list)):
-		image(v.bg_users, 592, 80*i)
+	for i in range(len(v.m_users)):
+		image(v.bg_users, 592, 120*i)
 		textAlign("LEFT")
-		text(v.econo_list[i], 600, 80*(i+1)-32)
+		text(v.m_users[i], 600, 120*(i+1)-48)
 		textAlign("RIGHT")
-		text(v.count[i], 1280, 80*(i+1)-32)
+		text(v.u_num[i], 1280, 120*(i+1)-48)
 
 def ChangementMenu():
 	v.toshow = 'Game'
-	v.econo_list = []
-	v.count = []
+	v.m_mouvement = []
+	v.m_default = []
+	v.m_eps = []
+	v.m_unlock = []
+	v.m_users = []
+	v.u_birth = []
+	v.u_death = []
+	v.u_num = []
+	v.u_sum = []
+	v.u_default = []
+	v.u_eps = []
 	with open('data/prices.json', 'r', encoding="utf-8") as mf:
 		json_data = json.load(mf)
 	for m in json_data:
-		mouvement_list.append(m)
+		v.m_mouvement.append(m)
+		v.m_default.append(json_data[m]['default'])
+		v.m_eps.append(json_data[m]['EPS'])
+		v.m_unlock.append(json_data[m]['unlock'])
 		if json_data[m]['id'] == v.shop:
 			for user in json_data[m]['users']: 
-				v.econo_list.append(user)
-				v.count.append(json_data[m]['users'][user]['num'])
+				v.m_users.append(user)
+				v.u_birth.append(json_data[m]['users'][user]['birth'])
+				v.u_death.append(json_data[m]['users'][user]['death'])
+				v.u_num.append(json_data[m]['users'][user]['num'])
+				v.u_sum.append(json_data[m]['users'][user]['sum'])
+				v.u_default.append(json_data[m]['users'][user]['default'])
+				v.u_eps.append(json_data[m]['users'][user]['EPS'])
+
 
 
 # PrixN = PrixBase * 1.15^n
