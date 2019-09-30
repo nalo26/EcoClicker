@@ -33,7 +33,7 @@ def mousePressed(pos):
 			v.Economia += 1
 
 		if v.mouseX > 387 and v.mouseX < 590: # Différents Mouvements
-			v.toshow = 'LoadData'
+			v.toshow = 'Shop'
 			if v.mouseY > 80*0 and v.mouseY < 80*1: # Mercantilistes
 				v.shop = 1
 			if v.mouseY > 80*1 and v.mouseY < 80*2: # Physiocrates
@@ -54,24 +54,16 @@ def mousePressed(pos):
 				v.shop = 9
 
 		if v.mouseX > 590: # Différents Personnages
-			if v.mouseY > 80*0 and v.mouseY < 80*1: 
-				# v.shop = 1
-				pass
-			if v.mouseY > 80*1 and v.mouseY < 80*2: 
-				# v.shop = 2
-				pass
-			if v.mouseY > 80*2 and v.mouseY < 80*3: 
-				# v.shop = 3
-				pass
-			# if v.mouseY > 80*3 and v.mouseY < 80*4: 
-			# 	v.shop = 4
-			# if v.mouseY > 80*4 and v.mouseY < 80*5: 
-			# 	v.shop = 5
-			# if v.mouseY > 80*5 and v.mouseY < 80*6: 
-			# 	v.shop = 6
-			# if v.mouseY > 80*6 and v.mouseY < 80*7: 
-			# 	v.shop = 7
-			# if v.mouseY > 80*7 and v.mouseY < 80*8: 
-			# 	v.shop = 8
-			# if v.mouseY > 80*8 and v.mouseY < 80*9: 
-			# 	v.shop = 9
+			v.toshow = 'Shop'
+			if v.mouseY > 120*0 and v.mouseY < 120*1: 
+				v.shopPers = 1
+			if v.mouseY > 120*1 and v.mouseY < 120*2: 
+				v.shopPers = 2
+			if v.mouseY > 120*2 and v.mouseY < 120*3: 
+				v.shopPers = 3
+			if v.mouseY > 120*3 and v.mouseY < 120*4: 
+				v.shopPers = 4
+			if v.mouseY > 120*4 and v.mouseY < 120*5: 
+				v.shopPers = 5
+			if v.mouseY > 120*5 and v.mouseY < 120*6: 
+				v.shopPers = 6
