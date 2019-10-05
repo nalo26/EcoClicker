@@ -5,7 +5,6 @@ v.init()
 from Game import *
 from Shop import *
 from GetKey import *
-from Menu import *
 from Options import *
 from Reset import *
 
@@ -16,17 +15,21 @@ v.width, v.height = pygame.display.get_surface().get_size()
 timer = pygame.time.Clock()
 
 v.billet = pygame.image.load("data/billet.png").convert()
-v.onglet = pygame.image.load("data/onglet.png")
+v.onglet_unlock = pygame.image.load("data/onglet_unlock.png")
+v.onglet_lock   = pygame.image.load("data/onglet_lock.png")
 v.bgshop = pygame.image.load("data/shop_bg.png").convert()
-v.bg_users = pygame.image.load("data/bg_users.png").convert()
+v.bgusers_unlock = pygame.image.load("data/bg_users_unlock.png").convert()
+v.bgusers_lock   = pygame.image.load("data/bg_users_lock.png").convert()
+v.option_bg = pygame.image.load("data/option_bg.png").convert()
+v.popUp = pygame.image.load("data/popUp.png").convert()
 
 while v.MainGameMaster: # boucle principale du jeu
 	pygame.display.flip() # Actualisation de la page
 
 	AutoClick(timer.tick())
 	if v.toshow == 'Shop': Shop()
+	if v.toshow == 'PopUp': PopUp()
 	if v.toshow == 'Game': Game() # affichages des différents pages
-	if v.toshow == 'Menu': Menu()
 	if v.toshow == 'Option': Option()
 	if v.toshow == 'Reset': Reset()
 

@@ -9,18 +9,16 @@ v.init()
 def keyPressed(keyCode, keyUnicode):
 	v.keyCode = keyCode
 
-	if v.toshow == 'Menu':
-		if v.keyCode == pygame.K_ESCAPE: v.MainGameMaster = False
-
-	if v.toshow == 'Shop':
-		if v.keyCode == pygame.K_ESCAPE: v.toshow = 'Game'
-
 	if v.toshow == 'Option':
-		if v.keyCode == pygame.K_ESCAPE: v.toshow = 'Game'
+		if v.keyCode == pygame.K_ESCAPE: v.toshow = 'Shop'
+
+	if v.toshow == 'PopUp':
+		if v.keyCode == pygame.K_ESCAPE:
+			v.toshow = 'Shop'
+			v.shopPers = 0
 
 	if v.toshow == 'Game':
 		if keyCode == pygame.K_ESCAPE: v.toshow = 'Option'
-		if keyCode == pygame.K_TAB : v.toshow = 'Shop'
 
 
 
@@ -34,6 +32,7 @@ def mousePressed(pos):
 
 		if v.mouseX > 387 and v.mouseX < 590: # Différents Mouvements
 			v.toshow = 'Shop'
+			v.oldShop = v.shop
 			if v.mouseY > 80*0 and v.mouseY < 80*1: # Mercantilistes
 				v.shop = 1
 			if v.mouseY > 80*1 and v.mouseY < 80*2: # Physiocrates
@@ -67,3 +66,15 @@ def mousePressed(pos):
 				v.shopPers = 5
 			if v.mouseY > 120*5 and v.mouseY < 120*6: 
 				v.shopPers = 6
+	if v.toshow == 'Option':
+		if v.mouseX > 120 and v.mouseX < 480 and v.mouseY > 147 and v.mouseY < 237: # Quitter
+			v.MainGameMaster = False
+
+		if v.mouseX > 800 and v.mouseX < 1160 and v.mouseY > 147 and v.mouseY < 237: # Statistiques
+			pass
+
+		if v.mouseX > 120 and v.mouseX < 480 and v.mouseY > 463 and v.mouseY < 553: # Réinitialiser
+			v.toshow = "Reset"
+
+		if v.mouseX > 800 and v.mouseX < 1160 and v.mouseY > 463 and v.mouseY < 553: # Crédits
+			pass

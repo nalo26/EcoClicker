@@ -2,12 +2,13 @@ import pygame
 
 def init():
 	global MainGameMaster, toshow, screen, height, width, color, fontName, fontSize, font, textAlign # pygame
-	global billet # pictures
+	global billet, onglet_unlock, onglet_lock, bgshop, bgusers_unlock, bgusers_lock, option_bg # pictures
 	global mouseX, mouseY, keyCode
-	global Economia, EPS, shop, shopPers
-	global m_mouvement, m_price, m_eps, m_unlock, m_users, u_birth, u_death, u_num, u_sum, u_default, u_eps, m_images # data from json
+	global Economia, EPS, oldShop, shop, shopPers
+	global m_mouvement, m_price, m_eps, m_unlock, m_users, u_birth, u_death, u_num, u_sum, u_default, u_eps, u_price, m_images # data from json
 
 	MainGameMaster = True
+	# toshow = 'Reset'
 	toshow = 'Reset'
 	screen = pygame.display.set_mode((1280, 720))
 	height = 0
@@ -19,9 +20,13 @@ def init():
 	textAlign = 'LEFT'
 
 	billet = pygame.image.load("data/billet.png").convert()
-	onglet = pygame.image.load("data/onglet.png")
+	onglet_unlock = pygame.image.load("data/onglet_unlock.png")
+	onglet_lock   = pygame.image.load("data/onglet_lock.png")
 	bgshop = pygame.image.load("data/shop_bg.png").convert()
-	bg_users = pygame.image.load("data/bg_users.png").convert()
+	bgusers_unlock = pygame.image.load("data/bg_users_unlock.png").convert()
+	bgusers_lock   = pygame.image.load("data/bg_users_lock.png").convert()
+	option_bg = pygame.image.load("data/option_bg.png").convert()
+	popUp = pygame.image.load("data/popUp.png").convert()
 
 	mouseX = 0
 	mouseY = 0
@@ -29,6 +34,7 @@ def init():
 
 	Economia = 1000000.0
 	EPS = 0 # eco par seconde
+	oldShop = 0
 	shop = 0
 	shopPers = 0
 
@@ -43,5 +49,6 @@ def init():
 	u_sum = []
 	u_default = []
 	u_eps = []
+	u_price = []
 
-	m_images = []
+	u_images = []

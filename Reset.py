@@ -6,6 +6,10 @@ from ProcToPy import *
 
 def Reset():
 	v.toshow = 'Shop'
+	v.Economia = 10000000000000000.0
+	v.EPS = 0
+	v.shop = 0
+	v.shopPers = 0
 	with open('data/prices.json', 'r', encoding="utf-8") as mf:
 		json_data = json.load(mf)
 	for m in json_data:

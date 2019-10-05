@@ -61,5 +61,40 @@ def background(r, g=-1, b=-1): #Red v.color, Green v.color, blue v.color
 		b = r
 	return v.screen.fill((r, g, b))
 
-def noStroke():
-	pass
+# def textWrap(surface, text, color, rect, font, aa=False, bkg=None):
+def textWrap(text, x, y, w, h, aa=False, bkg=None): # text, x position, y position, width rect, height rect, ???, ???
+	rect = pygame.Rect(x, y, w, h)
+	y = rect.top
+	lineSpacing = -2
+
+	while text:
+		i = 1
+		AntiSlash = False
+
+		# determine if the row of text will be outside our area
+		if y + v.fontSize > rect.bottom: break
+
+		# determine maximum width of line
+		while v.font.size(text[:i])[0] < rect.width and i < len(text):
+			if text[i] == '\n': 
+				AntiSlash = True
+				break
+			i += 1
+
+		# if we've wrapped the text, then adjust the wrap to the last word      
+		if i < len(text) and AntiSlash == False: 
+			i = text.rfind(" ", 0, i) + 1
+
+		# render the line and blit it to the surface
+		if bkg:
+			image = v.font.render(text[:i], 1, v.color, bkg)
+			image.set_colorkey(bkg)
+		else:
+			image = v.font.render(text[:i], aa, v.color)
+
+		v.screen.blit(image, (rect.left, y))
+		y += v.fontSize + lineSpacing
+
+		# remove the text we just blitted
+		if AntiSlash == False: text = text[i:]
+		else: text = text[i+1:]
