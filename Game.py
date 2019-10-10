@@ -1,4 +1,5 @@
 import pygame
+from random import randint
 import variables as v
 v.init()
 from ProcToPy import *
@@ -7,13 +8,19 @@ addx = 0
 
 def Game():
 	background(0)
+	MoveCoin()
 	textAlign("CENTER")
 	textSize(24)
 	fill(255)
-	text(f"€conomia : {int(v.Economia)}", 194, 20)
-	text(f"par seconde : {round(v.EPS, 2)}", 194, 40)
-
-	image(v.billet, 20, v.height/2-int(540/3)/2, int(1045/3), int(540/3))
+	text(f"€conomia : {Convert(v.Economia)}", 194, 20)
+	text(f"par seconde : {Convert(v.EPS)}", 194, 40)
+	if v.BilletState == 'high': image(v.billet, 20, v.height/2-int(540/3)/2, int(1045/3), int(540/3))
+	else: 
+		image(v.billet, 25, v.height/2-int(540/3)/2+5, int(1045/3)-10, int(540/3)-10)
+		v.timeStateBillet += 1
+		if v.timeStateBillet >= 10: 
+			v.timeStateBillet = 0
+			v.BilletState = 'high'
 
 	fill(255, 255, 255)
 	textAlign("LEFT")
@@ -28,7 +35,7 @@ def Game():
 			fill(79, 79, 79)
 			image(v.onglet_lock, 388+addx, 80*i)
 		text(v.m_mouvement[i], 400+addx, 80*(i+1)-47)
-		text(f"{v.m_price[i]}€ / {v.m_eps[i]}EPS", 400+addx, 80*(i+1)-15)
+		text(f"{Convert(v.m_price[i])}€ / x{Convert(v.m_cb[i])}CB", 400+addx, 80*(i+1)-15)
 	fill(255)
 	image(v.bgshop, 592, 0)
 
@@ -44,14 +51,16 @@ def Game():
 		text(v.m_users[i], 695, 120*i+25)
 		textSize(15)
 		text(f"{v.u_birth[i]} - {v.u_death[i]}", 695, 120*i+44)
-		# text(v.u_sum[i], 695, 120*i+90)
-		text(v.u_price[i], 695, 120*i+90)
-		textAlign("RIGHT")
 		textSize(24)
-		text(v.u_num[i], 1280-5, 120*i+25)
+		text(f"{Convert(v.u_price[i])}€ / +{Convert(v.u_eps[i])} EPS", 695, 120*i+90)
+		textAlign("RIGHT")
+		text(f"x{v.u_num[i]}", 1280-5, 120*i+25)
+	DrawClick()
 
 def AutoClick(tick):
 	v.Economia += v.EPS * (tick/1000)
+	v.s_eco_tot += v.EPS * (tick/1000)
+	v.s_time += tick/1000
 
 def PopUp():
 	k = v.shopPers-1
@@ -65,3 +74,36 @@ def PopUp():
 	textSize(15)
 	text(f"{v.u_birth[k]} - {v.u_death[k]}", v.width/2+80, 80)
 	textWrap(v.u_sum[k], 320, 220, 642, 477)
+
+class Coin:
+	def __init__(self):
+		self.x = randint(0, 358)
+		self.y = -30
+
+	def move(self):
+		self.y += 1
+		image(v.CoinIm, self.x, self.y, 30, 30)
+		if self.y > v.height: v.cCoins.remove(self)
+
+class Click:
+	def __init__(self, x, y):
+		# self.x = randint(20, 368)
+		# self.y = randint(270, 450)
+		self.x = x
+		self.y = y
+		self.t = 0
+
+	def act(self):
+		self.t += 1
+		self.y -= 1
+		text(f"+{v.CB}", self.x, self.y)
+		# print(self.t, self.x, self.y)
+		if self.t > 50: v.cClicks.remove(self)
+
+def MoveCoin():
+	for coin in v.cCoins:
+		coin.move()
+
+def DrawClick():
+	for click in v.cClicks:
+		click.act()

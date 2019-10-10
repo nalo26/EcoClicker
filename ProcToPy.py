@@ -98,3 +98,34 @@ def textWrap(text, x, y, w, h, aa=False, bkg=None): # text, x position, y positi
 		# remove the text we just blitted
 		if AntiSlash == False: text = text[i:]
 		else: text = text[i+1:]
+
+def Convert(E):
+	C = ""
+	if E < 1000: C = str(round(E))
+	if E >= 1000: C = str(round(E/1000, 1)) + ' K'
+	if E >= 1000000: C = str(round(E/1000000, 1)) + ' M'
+	if E >= 1000000000: C = str(round(E/1000000000, 1)) + ' B'
+	if E >= 1000000000000: C = str(round(E/1000000000000, 1)) + ' T'
+	if E >= 1000000000000000: C = str(round(E/1000000000000000, 1)) + ' Q'
+
+	return C
+
+def Arrange(E):
+	C = "'".join(str(int(E))[::-1][i:i+3] for i in range(0, len(str(int(E))), 3))[::-1]
+	if C == '': return '0'
+	else: return C
+
+def Time(s): # time in sec
+	s = int(s)
+	m = 0
+	h = 0
+	while s >= 60:
+		s -= 60
+		m += 1
+		if m >= 60: h += 1
+
+	h = str(h)
+	m = str(m)
+	s = str(s)
+
+	return f"{'0'*(2-len(h))+h}:{'0'*(2-len(m))+m}:{'0'*(2-len(s))+s}"

@@ -5,10 +5,11 @@ v.init()
 from ProcToPy import *
 
 def Shop():
-	v.toshow = 'Game'
+	if v.toshow == 'Loading': pass
+	if v.toshow == 'Shop': v.toshow = 'Game'
 	v.m_mouvement = []
 	v.m_price     = []
-	v.m_eps       = []
+	v.m_cb        = []
 	v.m_unlock    = []
 	canpass = False
 
@@ -21,6 +22,9 @@ def Shop():
 			if json_data[m]['unlock'] == "False" and v.Economia >= json_data[m]['price']:
 				json_data[m]['unlock'] = "True"
 				v.Economia -= json_data[m]['price']
+				v.s_m_price += json_data[m]['price']
+				v.s_m_act += 1
+				v.CB *= json_data[m]['CB']
 				canpass = True
 			if json_data[m]['unlock'] == "True": canpass = True
 
@@ -41,12 +45,13 @@ def Shop():
 
 					if json_data[m]['users'][user]['id'] == v.shopPers and v.Economia >= json_data[m]['users'][user]['default'] * (1.15**json_data[m]['users'][user]['num']):
 						v.Economia -= json_data[m]['users'][user]['default'] * (1.15**json_data[m]['users'][user]['num'])
-						json_data[m]['users'][user]['num'] += 1
+						v.s_u_price += json_data[m]['users'][user]['default'] * (1.15**json_data[m]['users'][user]['num'])
+						v.s_u_tot += 1
+						if json_data[m]['users'][user]['num'] == 0: v.s_u_act += 1
 						v.EPS += json_data[m]['users'][user]['EPS']
+						json_data[m]['users'][user]['num'] += 1
 						if json_data[m]['users'][user]['num'] == 1: v.toshow = 'PopUp'
-						else: 
-							# print(v.shopPers)
-							v.shopPers = 0
+						else: v.shopPers = 0
 
 					v.u_images.append(pygame.image.load(f"data/portraits/{user}.jpg"))
 					v.u_birth.append(json_data[m]['users'][user]['birth'])
@@ -59,13 +64,9 @@ def Shop():
 
 		v.m_mouvement.append(m)
 		v.m_price.append(json_data[m]['price'])
-		v.m_eps.append(json_data[m]['EPS'])
+		v.m_cb.append(json_data[m]['CB'])
 		v.m_unlock.append(json_data[m]['unlock'])
 
 	with open('data/prices.json', 'w', encoding='utf-8') as mw:
 		json.dump(json_data, mw, indent=4)
 		mw.close()
-
-
-
-# PrixN = PrixBase * 1.15^n
