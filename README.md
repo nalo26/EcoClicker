@@ -6,4 +6,4 @@ You'll need this for run the project :
 - Pygame (`pip install pygame`)
 - Json (`pip install json`)
 
-Run it by executing `start.cmd` or typing `python main.py`.
+Run it by executing `start.bat` or typing `python main.py`.
