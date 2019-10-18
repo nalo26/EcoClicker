@@ -1,4 +1,5 @@
 import pygame
+from random import randint
 import variables as v
 from ProcToPy import *
 from Game import Coin, Click
@@ -39,7 +40,7 @@ def mousePressed(pos):
 		if v.mouseX > 20 and v.mouseX < 368 and v.mouseY > 270 and v.mouseY < 450: # Billet
 			v.Economia += v.CB
 			v.s_clicks += 1
-			v.cCoins.append(Coin())
+			if len(v.cCoins) < 200: v.cCoins.append(Coin())
 			v.cClicks.append(Click(v.mouseX, v.mouseY))
 			if v.BilletState == 'low': 
 				v.BilletState = 'high'

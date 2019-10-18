@@ -9,7 +9,7 @@
                 "id": 1,
                 "birth": 1575,
                 "death": 1621,
-                "num": 0,
+                "num": 1,
                 "default": 15,
                 "EPS": 1
             },
@@ -35,7 +35,7 @@
         "id": 2,
         "price": 100,
         "CB": 2,
-        "unlock": "True",
+        "unlock": "False",
         "users": {
             "Fran\u00e7ois Quesnay": {
                 "id": 1,
@@ -313,7 +313,7 @@
                 "id": 2,
                 "birth": 1883,
                 "death": 1950,
-                "num": 1,
+                "num": 0,
                 "default": 10066329600,
                 "EPS": 2013265920
             },
@@ -321,7 +321,7 @@
                 "id": 3,
                 "birth": 1908,
                 "death": 2006,
-                "num": 2,
+                "num": 0,
                 "default": 20132659200,
                 "EPS": 4026531840
             },
@@ -329,7 +329,7 @@
                 "id": 4,
                 "birth": "",
                 "death": "",
-                "num": 0,
+                "num": 1,
                 "default": 500000000000000000,
                 "EPS": 250000000000
             }

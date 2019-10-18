@@ -96,6 +96,7 @@ class Click:
 	def act(self):
 		self.t += 1
 		self.y -= 1
+		fill(255)
 		text(f"+{v.CB}", self.x, self.y)
 		# print(self.t, self.x, self.y)
 		if self.t > 50: v.cClicks.remove(self)
