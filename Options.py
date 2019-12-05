@@ -80,7 +80,7 @@ def Credits():
 
 	textAlign("LEFT")
 	textSize(26)
-	text("• Idée du jeu : Julien C / Nathan V", 30, 120)
+	text("• Idées du jeu : Julien C / Nathan V", 30, 120)
 	text("• Chercheurs : Nathan P / Maxime T / Josué B", 30, 160)
 	text("• Développeur : Nathan V", 30, 200)
 	text("• Graphismes : Julien C / Nathan P / Nathan V", 30, 240)
